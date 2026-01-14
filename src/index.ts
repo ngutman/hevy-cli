@@ -225,7 +225,7 @@ workouts
       const { apiKey } = await requireApiKey();
       const client = createClient(apiKey);
       const response = await client.get<Record<string, unknown>>("/workouts/count");
-      const count = (response as { count?: number }).count ?? response;
+      const count = (response as { workout_count?: number }).workout_count ?? (response as any).count ?? response;
       if (opts.json) {
         outputJson({ count });
       } else {
@@ -377,7 +377,7 @@ program
         client.get<Record<string, unknown>>("/workouts/count"),
         client.get<unknown>("/workouts", { page: 1, pageSize: 3 }),
       ]);
-      const workoutsCount = (countResponse as { count?: number }).count ?? countResponse;
+      const workoutsCount = (countResponse as { workout_count?: number }).workout_count ?? (countResponse as any).count ?? countResponse;
       const workouts = getList<any>(workoutsResponse as any);
       const latest = workouts[0];
 
