@@ -1,0 +1,33 @@
+{
+  "name": "hevy-cli",
+  "version": "1.0.0",
+  "description": "Shiny CLI for the Hevy workout tracking API",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "hevy": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "hevy",
+    "cli",
+    "workouts"
+  ],
+  "author": "ngutman",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "cli-table3": "^0.6.5",
+    "commander": "^14.0.2",
+    "ora": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.8",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
